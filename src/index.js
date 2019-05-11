@@ -18,7 +18,8 @@ class App extends Component {
 	}
 
 	getPosts() {
-		axios.get('http://localhost:3000/api/v1/p')
+		const HOST = process.env.API_HOST
+		axios.get(HOST+'/api/v1/p')
 			.then(function (response) {
 				console.log(response.data)
 			})

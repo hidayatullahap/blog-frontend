@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const VENDOR_LIBS = ['react', 'react-dom'];
 const Dotenv = require('dotenv-webpack');
 
+const antdLess = path.join(__dirname, 'styles/index.less');
+
 module.exports = {
 	entry: {
 		bundle: './src/index.js',
@@ -49,6 +51,24 @@ module.exports = {
 				use: [
 					MiniCssExtractPlugin.loader,
 					'css-loader'
+				]
+			},
+			{
+				test: /\.less$/,
+				use: [
+					{
+						loader: 'style-loader',
+					}, {
+						loader: 'css-loader',
+					}, {
+						loader: 'less-loader',
+						options: {
+							modifyVars: {
+								'ant-theme-file': antdLess
+							},
+							javascriptEnabled: true,
+						},
+					}
 				]
 			}
 		]

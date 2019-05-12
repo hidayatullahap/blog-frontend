@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import WebFont from 'webfontloader';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../style/style.css';
+
+import '../styles/index.less';
+import '../styles/style.css';
 import 'antd/dist/antd.css';
+
 import Header from './header';
 import Content from './content';
 
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
+			<div>
 				<Header></Header>
 				<Content></Content>
 			</div>

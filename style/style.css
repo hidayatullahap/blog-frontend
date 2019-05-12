@@ -1,6 +1,16 @@
+@import './header.css';
+@import './colors.css';
+
 body {
-	text-align: center;
 	font-family: Roboto, sans-serif !important;
+	color: #fff !important;
+	background-color: #1E1E1E !important;
+}
+
+.red-border{
+	border-style: solid;
+	border-width: 1px;
+	border-color:rgb(211, 62, 77);
 }
 
 .row {
